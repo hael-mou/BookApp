@@ -100,6 +100,8 @@ public class BookAdapter extends RecyclerView.Adapter <BookAdapter.bookHolder> i
             review = itemView.findViewById(R.id.review);
             ratingBar = itemView.findViewById(R.id.ratingBar);
             image=itemView.findViewById(R.id.book_image);
+
+
         }
     }
 }    
