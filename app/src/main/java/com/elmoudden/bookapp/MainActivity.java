@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         list.setLayoutManager(lm);
         list.hasFixedSize();
         list.setAdapter(adapter);
+
     }
 
 
