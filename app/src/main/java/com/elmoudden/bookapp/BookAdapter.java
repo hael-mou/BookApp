@@ -3,6 +3,7 @@ package com.elmoudden.bookapp;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -33,7 +34,8 @@ public class BookAdapter extends RecyclerView.Adapter <BookAdapter.bookHolder> {
         holder.page.setText(book.getPage()+"");
         holder.review.setText(book.getN_reviews()+"");
         holder.ratingBar.setRating(book.getRatingScore());
-
+        if(book.getImageid()!=0){
+        holder.image.setImageResource(book.getImageid());}
     }
 
     @Override
@@ -44,7 +46,7 @@ public class BookAdapter extends RecyclerView.Adapter <BookAdapter.bookHolder> {
     public static class bookHolder extends  RecyclerView.ViewHolder{
         TextView title,author,page,review;
         RatingBar ratingBar;
-
+        ImageView image;
         public bookHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
@@ -52,6 +54,7 @@ public class BookAdapter extends RecyclerView.Adapter <BookAdapter.bookHolder> {
             page = itemView.findViewById(R.id.page);
             review = itemView.findViewById(R.id.review);
             ratingBar = itemView.findViewById(R.id.ratingBar);
+            image=itemView.findViewById(R.id.book_image);
         }
     }
 }    

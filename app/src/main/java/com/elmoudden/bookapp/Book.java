@@ -1,17 +1,41 @@
 package com.elmoudden.bookapp;
 
 public class Book  {
-    private String title,author;
-    private int id,ratingScore , page , n_reviews;
+    private String title,author,category;
+    private int id;
+    private int ratingScore;
+    private int page;
+    private int n_reviews;
 
-    public Book(int id ,String title, String author, int ratingScore, int page, int n_reviews) {
-        this.id = id;
+    public Book(String title, String author, String category, int id, int ratingScore, int page, int n_reviews, int imageid) {
         this.title = title;
         this.author = author;
+        this.category = category;
+        this.id = id;
         this.ratingScore = ratingScore;
         this.page = page;
         this.n_reviews = n_reviews;
+        this.imageid = imageid;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getImageid() {
+        return imageid;
+    }
+
+    public void setImageid(int imageid) {
+        this.imageid = imageid;
+    }
+
+    private int imageid;
+
 
     public String getTitle() {
         return title;

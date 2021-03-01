@@ -83,7 +83,9 @@ public class DatabaseAccess {
                 int ratingScore = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ratingScore));
                 int page = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_page));
                 int reviews = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_reviews));
-                books.add(new Book(id,title,author,ratingScore,page,reviews));
+                int imageid = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ImageId));
+                String category = cursor.getString(cursor.getColumnIndex(MyDataBase.BOOK_Category));
+                books.add(new Book(title,author,category,id,ratingScore,page,reviews,imageid));
             }while (cursor.moveToNext());
             cursor.close();
         }
@@ -102,7 +104,9 @@ public class DatabaseAccess {
                 int ratingScore = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ratingScore));
                 int page = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_page));
                 int reviews = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_reviews));
-                books.add(new Book(id,title,author,ratingScore,page,reviews));
+                int imageid = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ImageId));
+                String category = cursor.getString(cursor.getColumnIndex(MyDataBase.BOOK_Category));
+                books.add(new Book(title,author,category,id,ratingScore,page,reviews,imageid));
             }while (cursor.moveToNext());
             cursor.close();
         }
@@ -120,7 +124,9 @@ public class DatabaseAccess {
                 int ratingScore = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ratingScore));
                 int page = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_page));
                 int reviews = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_reviews));
-                books.add(new Book(id,title,author,ratingScore,page,reviews));
+                int imageid = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ImageId));
+                String category = cursor.getString(cursor.getColumnIndex(MyDataBase.BOOK_Category));
+                books.add(new Book(title,author,category,id,ratingScore,page,reviews,imageid));
             }while (cursor.moveToNext());
             cursor.close();
         }
@@ -138,7 +144,9 @@ public class DatabaseAccess {
                 int ratingScore = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ratingScore));
                 int page = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_page));
                 int reviews = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_reviews));
-                books.add(new Book(id,title,author,ratingScore,page,reviews));
+                int imageid = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ImageId));
+                String category = cursor.getString(cursor.getColumnIndex(MyDataBase.BOOK_Category));
+                books.add(new Book(title,author,category,id,ratingScore,page,reviews,imageid));
             }while (cursor.moveToNext());
             cursor.close();
         }
