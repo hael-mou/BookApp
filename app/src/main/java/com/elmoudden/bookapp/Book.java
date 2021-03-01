@@ -6,6 +6,7 @@ public class Book  {
     private int ratingScore;
     private int page;
     private int n_reviews;
+    public Book(){}
 
     public Book(String title, String author, String category, int id, int ratingScore, int page, int n_reviews, int imageid) {
         this.title = title;
