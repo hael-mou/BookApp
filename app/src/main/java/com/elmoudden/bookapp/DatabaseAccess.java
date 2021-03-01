@@ -39,26 +39,12 @@ public class DatabaseAccess {
 
 
 
-    public boolean addBook(Book newBook){
+
+
+    public boolean upDAteBook(Book newBook,int image){
         ContentValues data = new ContentValues();
-        data.put(MyDataBase.BOOK_title,newBook.getTitle());
-        data.put(MyDataBase.BOOK_author,newBook.getAuthor());
-        data.put(MyDataBase.BOOK_ratingScore,newBook.getRatingScore());
-        data.put(MyDataBase.BOOK_page,newBook.getPage());
-        data.put(MyDataBase.BOOK_reviews,newBook.getN_reviews());
+        data.put(MyDataBase.BOOK_ImageId,image);
 
-        long res = this.dataBase.insert(MyDataBase.BOOK_TB_NAME,null,data);
-
-        return  res != -1 ;
-    }
-
-    public boolean upDAteBook(Book newBook){
-        ContentValues data = new ContentValues();
-        data.put(MyDataBase.BOOK_title,newBook.getTitle());
-        data.put(MyDataBase.BOOK_author,newBook.getAuthor());
-        data.put(MyDataBase.BOOK_ratingScore,newBook.getRatingScore());
-        data.put(MyDataBase.BOOK_page,newBook.getPage());
-        data.put(MyDataBase.BOOK_reviews,newBook.getN_reviews());
 
         String [] args = {String.valueOf(newBook.getId())};
         int res = this.dataBase.update(MyDataBase.BOOK_TB_NAME,data,"id=?",args);
@@ -66,11 +52,6 @@ public class DatabaseAccess {
         return  res != 0;
     }
 
-    public boolean deleteBook(Book newBook){
-        String [] args = {String.valueOf(newBook.getId())};
-        int res = this.dataBase.delete(MyDataBase.BOOK_TB_NAME,"id=?",args);
-        return  res != 0;
-    }
 
     public ArrayList<Book> getAllBooks(){
         ArrayList <Book> books = new ArrayList<>();
