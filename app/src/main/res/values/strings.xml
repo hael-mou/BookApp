@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BookApp</string>
+    <string name="TODO">TODO</string>
+    <string name="by">By </string>
+    <string name="score">score</string>
+    <string name="pages"> pages |</string>
+    <string name="review"> review</string>
+</resources>
