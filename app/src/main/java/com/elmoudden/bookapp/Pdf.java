@@ -14,6 +14,7 @@ public class Pdf extends AppCompatActivity {
         setContentView(R.layout.activity_pdf);
 
         PDFView pdf=findViewById(R.id.pdf);
+
         pdf.fromAsset("automata theory utorial.pdf")
                 .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
                 .enableSwipe(true) // allows to block changing pages using swipe
