@@ -28,16 +28,23 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(adapter);
 
     }
+
     private void findview(){
         list = findViewById(R.id.list_item);
     }
-private void addImage(){
+
+    private void addImage(){
     DatabaseAccess database;
     database = DatabaseAccess.getInstance(this);
     database.open();
     books = database.getAllBooks();
+    books.get(1).setImageid(R.drawable.richdad);
+    books.get(2).setImageid(R.drawable.cheese);
+    books.get(3).setImageid(R.drawable.antigone);
+    books.get(4).setImageid(R.drawable.la_boite);
+    books.get(5).setImageid(R.drawable.les_miserables);
     database.close();
-}
+   }
 
 
 }

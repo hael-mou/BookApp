@@ -38,21 +38,6 @@ public class DatabaseAccess {
     }
 
 
-
-
-
-    public boolean upDAteBook(Book newBook,int image){
-        ContentValues data = new ContentValues();
-        data.put(MyDataBase.BOOK_ImageId,image);
-
-
-        String [] args = {String.valueOf(newBook.getId())};
-        int res = this.dataBase.update(MyDataBase.BOOK_TB_NAME,data,"id=?",args);
-
-        return  res != 0;
-    }
-
-
     public ArrayList<Book> getAllBooks(){
         ArrayList <Book> books = new ArrayList<>();
         Cursor cursor = this.dataBase.rawQuery("SELECT * FROM "+MyDataBase.BOOK_TB_NAME,null);
@@ -64,9 +49,7 @@ public class DatabaseAccess {
                 int ratingScore = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ratingScore));
                 int page = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_page));
                 int reviews = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_reviews));
-                int imageid = cursor.getInt(cursor.getColumnIndex(MyDataBase.BOOK_ImageId));
-                String category = cursor.getString(cursor.getColumnIndex(MyDataBase.BOOK_Category));
-                books.add(new Book(title,author,category,id,ratingScore,page,reviews,imageid));
+                books.add(new Book(title,author,null,id,ratingScore,page,reviews,0));
             }while (cursor.moveToNext());
             cursor.close();
         }
