@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         findview();
         addImage();
-        adapter = new BookAdapter(books);
+        adapter = new BookAdapter(books, new OnRecycleClick() {
+            @Override
+            public void onItemclicklick(Book book) {
+                Intent intent = new Intent(getBaseContext(),Pdf.class);
+                intent.putExtra("PDFNAME",book.getTitle());
+                startActivity(intent);
+            }
+        });
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
 
         list.setLayoutManager(lm);

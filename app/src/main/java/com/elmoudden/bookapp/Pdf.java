@@ -2,8 +2,8 @@ package com.elmoudden.bookapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-
 import com.github.barteksc.pdfviewer.PDFView;
 
 public class Pdf extends AppCompatActivity {
@@ -12,9 +12,10 @@ public class Pdf extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
-
         PDFView pdf=findViewById(R.id.pdf);
-        pdf.fromAsset("automata theory utorial.pdf")
+
+        Intent intent = getIntent();
+        pdf.fromAsset("books/"+intent.getStringExtra("PDFNAME")+".pdf")
                 .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
                 .enableSwipe(true) // allows to block changing pages using swipe
                 .swipeHorizontal(false)
